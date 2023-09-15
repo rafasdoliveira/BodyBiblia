@@ -1,0 +1,12 @@
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    margin: 1rem;
+    width: 250px;
+}
+
+.links:hover{
+    color:coral;
+}

@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BODYBIBLIA | Challenge 
 
-## Getting Started
+##### (pt-br)
+## Descrição
 
-First, run the development server:
+O Desafio BodyBiblia nasceu com a intenção de instigar motivação, proporcionar incentivo e promover uma competição saudável entre os participantes, abrangendo tanto as dimensões físicas quanto espirituais.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+O objetivo central deste desafio é a realização diária de sessões de treino físico e leituras bíblicas. Cada atividade completada acresce um ponto ao contador diário. Ao fim do período do desafio, aquele que acumular mais pontos será contemplado com um valor em dinheiro.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O vencedor será agraciado com 50% do valor total arrecadado durante o desafio. Os restantes 50% serão destinados a instituições dedicadas a causas sociais, reafirmando nosso compromisso com a responsabilidade social.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Links Relevantes
+* Veja nosso [Site](https://body-biblia.vercel.app/)
+* Siga-nos no [Instagram](https://www.instagram.com/bodybiblia/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Desenvolvedor
+* Pensado e desenvolvido por [Rafael Oliveira](https://www.linkedin.com/in/rafasdoliveira/) 
+* Siga-me no [Instagram](https://www.instagram.com/rafasdoliveira/)
+* Fale comigo no [WhatsApp](https://api.whatsapp.com/send?phone=+5485%209%209799%205271&text=Ol%C3%A1%21+Queria+saber+mais+sobre+o+BodyBible%21)!
+* Acompanhe como tem sido o processo da criação do desafio e do desenvolvimento no [Youtube]()
 
-## Learn More
+###### O projeto segue em desenvolvimento buscando melhorar a interação com o usuário e agregar conhecimento para o desenvolvedor.
 
-To learn more about Next.js, take a look at the following resources:
+##### (en-us)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Description
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The BodyBiblia Challenge was born with the intention of instilling motivation, providing encouragement, and promoting a healthy competition among participants, encompassing both physical and spiritual dimensions.
 
-## Deploy on Vercel
+The core objective of this challenge is the daily completion of physical workout sessions and Bible readings. Each completed activity adds one point to the daily tally. At the end of the challenge period, the participant who accumulates the most points will be rewarded with a cash prize.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The winner will be awarded 50% of the total funds collected during the challenge. The remaining 50% will be directed towards institutions dedicated to social causes, reaffirming our commitment to social responsibility.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Relevant Links
+* Visit our [Website](https://body-biblia.vercel.app/)
+* Follow us on [Instagram](https://www.instagram.com/bodybiblia/)
+
+## Developer
+* Conceived and developed by [Rafael Oliveira](https://www.linkedin.com/in/rafasdoliveira/) 
+* Follow me on [Instagram](https://www.instagram.com/rafasdoliveira/)
+* Contact me on [WhatsApp](https://api.whatsapp.com/send?phone=+5485%209%209799%205271&text=Ol%C3%A1%21+Queria+saber+mais+sobre+o+BodyBible%21)!
+* Follow along with the creation process of the challenge and its development on [Youtube]()
+
+###### The project is under development, aiming to enhance user interaction and contribute knowledge to the developer.
