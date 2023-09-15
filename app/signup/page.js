@@ -15,7 +15,7 @@ export default function SignUp() {
                     </p>
                     <p>
                         Nome de usuário: <br/>
-                        <input type="number" id="inUser" min="1" step="0.1" required/>
+                        <input type="text" id="inUser" required/>
                     </p>
                     <p>
                         Telefone: <br/>
@@ -31,24 +31,26 @@ export default function SignUp() {
                     </p>
                     <p>
                         Altura (mt): <br/>
-                        <input type="number" id="inHeight" min="1" step="0.1" required/>
+                        <input type="number" id="inHeight" min="1" step="0.01" required/>
                     </p>
                     <p>
                         Sexo:<br/>
-                        <input type="radio" id="inMale" name="sexo"></input><label>Masculino</label><br/>
-                        <input type="radio" id="inFemale" name="sexo"></input><label>Feminino</label>
+                        <input type="radio" id="inMale" name="sexo" required></input><label>Masculino</label><br/>
+                        <input type="radio" id="inFemale" name="sexo" required></input><label>Feminino</label>
                     </p>
                     <p>
                         Objetivo Principal: <br/>
-                        <select>
+                        <select id="objetivo" required>
                             <option></option>
-                            <option>Hipertrofia</option>
-                            <option>Emagrecimento</option>
-                            <option>Saúde e Bem Estar</option>
+                            <option value="inConstancia">Constância na leitura</option>
+                            <option value="inEmagrecimento">Emagrecimento</option>
+                            <option value="inHipertrofia">Hipertrofia</option>
+                            <option value="inRelacionamento">Relacionamento com Deus</option>
+                            <option value="inSaude">Saúde e Bem Estar</option>
                         </select>
                     </p>
-                    <input type="checkbox"/> Ao enviar confirmo e aceito os <Link href="/rules">Termos e condições</Link><br/>
-                    <input type="submit" value="Consultar Envios"/>
+                    <input type="checkbox" required/> Ao enviar confirmo e aceito os <Link href="/rules">Termos e condições</Link><br/>
+                    <input type="submit" value="Inscrever" required/>
                 </form>
             </div>
             <div className={styles.links}>

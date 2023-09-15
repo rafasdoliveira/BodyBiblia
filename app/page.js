@@ -1,12 +1,14 @@
 import Link from 'next/link'
+import Date from './components/date/date'
 import styles from './page.module.css'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.div1}>
+       <Date/>
         <h1>
-          HomePage
+          BodyBiblia - 3ª Edição!
         </h1>      
         <p>
           Clique nos botões para interagir!
