@@ -1,7 +1,26 @@
 import Link from "next/link"
+import api from "@/src/services/api"
 import styles from "./page.module.css"
 
 export default function SignUp() {
+
+    function cadastrar(){
+        axios.post('',{
+            nome: nome,
+            email: email,
+            senha: senha
+        }, {headers:{
+            
+        }}).try(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        
+    }
+
     return(
         <div>
             <div>
@@ -16,6 +35,20 @@ export default function SignUp() {
                     <p>
                         Nome de usuário: <br/>
                         <input type="text" id="inUser" required/>
+                    </p>
+                    <p>
+                        Igreja: <br/>
+                        <select id="inChurch" required>
+                            <option></option>
+                            <option>Comunidade Cristã Videira</option>
+                            <option>Comunidade das Nações</option>
+                            <option>Paz Church</option>
+                        </select>
+                        
+                    </p>
+                    <p>
+                        Data de Nascimento: <br/>
+                        <input type="date" id="inBirthday" required/>
                     </p>
                     <p>
                         Telefone: <br/>

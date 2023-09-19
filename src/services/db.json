@@ -1,0 +1,24 @@
+{
+    "usuario": [
+        { 
+        "name": "Rafael Oliveira", 
+        "username": "rafasdoliveira", 
+        "igreja": "Comunidade Cristã Videira",
+        "birthday": "26/01/2001",
+        "phone": 85997995271, 
+        "e-mail": "rafasdoliveira@outlook.com",
+        "peso": 82,
+        "altura": 1.82,
+        "sexo": "Masculino",
+        "objetivo": "Hipertrofia",
+        "termos": true
+    }
+    ],
+
+    "desafio": [
+        {
+        "username": "rafasdoliveira"
+        
+    } 
+    ]
+}

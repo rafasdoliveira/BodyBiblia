@@ -5,7 +5,7 @@ export default function Forms() {
     return(
         <div>
             <div>
-                <h1>Forms</h1>
+                <h1>Formulário</h1>
             </div>
             <div>
                 <form>
@@ -33,5 +33,6 @@ export default function Forms() {
                 <Link href="/">Voltar para página principal</Link>
             </div>
         </div>
+        
     )
 }

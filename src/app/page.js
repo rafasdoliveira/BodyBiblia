@@ -1,12 +1,13 @@
 import Link from 'next/link'
-import Date from './components/date/date'
+import Data from './components/date/date'
+import Footer from './components/footer/footer'
 import styles from './page.module.css'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.div1}>
-       <Date/>
+       <Data/>
         <h1>
           BodyBiblia - 3ª Edição!
         </h1>      
@@ -28,6 +29,8 @@ export default function Home() {
           <Link href="/envios">Consultar Envios</Link>
         </div>
       </div>
+      
+      <Footer/>
     </main>
   )
 }
