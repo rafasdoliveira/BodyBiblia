@@ -1,24 +1,48 @@
+'use client'
+
 import Link from "next/link"
 import api from "@/src/services/api"
 import styles from "./page.module.css"
+import { useState } from "react"
 
 export default function SignUp() {
 
-    function cadastrar(){
-        axios.post('',{
-            nome: nome,
+    const [name, setName] = useState('')
+    const [username, setUsername] = useState('')
+    const [church, setChurch] = useState('')
+    const [birthday, setBirthday] = useState('')
+    const [phone, setPhone] = useState('')
+    const [email, setEmail] = useState('')
+    const [weight, setWeight] = useState('')
+    const [height, setHeight] = useState('')
+    const [gender, setGender] = useState('')
+    const [goal, setGoal] = useState('')
+    const [terms, setTerms] = useState('')
+    const [password, setPassword] = useState('')
+    
+    function register(){
+        axios.post('https://keztncwqdiwmjhvxyczy.supabase.co/rest/v1/usuarios',{
+            name: name,
+            username: username,
+            church: church,
+            birthday: birthday,
+            phone: phone,
             email: email,
-            senha: senha
+            weight: weight,
+            height: height,
+            gender: gender,
+            goal: goal,
+            terms: terms,
+            password: password
         }, {headers:{
-            
-        }}).try(function (response) {
+
+            apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlenRuY3dxZGl3bWpodnh5Y3p5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4MjYzOTk3NywiZXhwIjoxOTk4MjE1OTc3fQ.7-urr08m7_KARrZ0_FuuJEDopAdzw1MIeOZSDmSvEyQ'
+        }}).then(function (response) {
             console.log(response);
           })
           .catch(function (error) {
             console.log(error);
           });
-
-        
     }
 
     return(
@@ -29,12 +53,12 @@ export default function SignUp() {
             <div>
                 <form>
                     <p>
-                        Nome completo: <br/>
-                        <input type="text" id="inName" required/>
+                        Nome: <br/>
+                        <input type="text" id="inName" placeholder="Nome e Sobrenome" required/>
                     </p>
                     <p>
                         Nome de usuário: <br/>
-                        <input type="text" id="inUser" required/>
+                        <input type="text" id="inUser" placeholder="Nome de Usuário" required/>
                     </p>
                     <p>
                         Igreja: <br/>
@@ -52,7 +76,7 @@ export default function SignUp() {
                     </p>
                     <p>
                         Telefone: <br/>
-                        <input type="number" id="inPhone" required/>
+                        <input type="tel" id="inPhone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" max="12" required/>
                     </p>
                     <p>
                         E-mail: <br/>
@@ -82,9 +106,14 @@ export default function SignUp() {
                             <option value="inSaude">Saúde e Bem Estar</option>
                         </select>
                     </p>
+                    <p>
+                        Senha: <br/>
+                        <input type="password" id="inPassword" minLength="8" required/>
+                    </p>                 
                     <input type="checkbox" required/> Ao enviar confirmo e aceito os <Link href="/rules">Termos e condições</Link><br/>
                     <input type="submit" value="Inscrever" required/>
                 </form>
+
             </div>
             <div className={styles.links}>
                 <Link href="/">Voltar para página principal</Link>
