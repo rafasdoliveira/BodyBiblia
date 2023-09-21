@@ -1,9 +1,10 @@
 'use client'
 
 import Link from "next/link"
-import api from "@/src/services/api"
+import axios from "axios"
 import styles from "./page.module.css"
 import { useState } from "react"
+
 
 export default function SignUp() {
 
@@ -19,9 +20,9 @@ export default function SignUp() {
     const [goal, setGoal] = useState('')
     const [terms, setTerms] = useState('')
     const [password, setPassword] = useState('')
-    
+
     function register(){
-        axios.post('https://keztncwqdiwmjhvxyczy.supabase.co/rest/v1/usuarios',{
+        axios.post('http://localhost:8081/users',{
             name: name,
             username: username,
             church: church,
@@ -34,14 +35,15 @@ export default function SignUp() {
             goal: goal,
             terms: terms,
             password: password
-        }, {headers:{
-
-            apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlenRuY3dxZGl3bWpodnh5Y3p5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4MjYzOTk3NywiZXhwIjoxOTk4MjE1OTc3fQ.7-urr08m7_KARrZ0_FuuJEDopAdzw1MIeOZSDmSvEyQ'
-        }}).then(function (response) {
-            console.log(response);
+        }, 
+            )
+            .then(function (response) {
+                alert("Cadastro realizado com sucesso")
+                console.log(response);
           })
-          .catch(function (error) {
-            console.log(error);
+            .catch(function (error) {
+                alert("Algo de errado não está certo")
+                console.log(error);
           });
     }
 
@@ -54,15 +56,15 @@ export default function SignUp() {
                 <form>
                     <p>
                         Nome: <br/>
-                        <input type="text" id="inName" placeholder="Nome e Sobrenome" required/>
+                        <input type="text" id="inName" onChange={(e) => setName(e.target.value)} placeholder="Nome e Sobrenome" required/>
                     </p>
                     <p>
                         Nome de usuário: <br/>
-                        <input type="text" id="inUser" placeholder="Nome de Usuário" required/>
+                        <input type="text" id="inUser" onChange={(e) => setUsername(e.target.value)} placeholder="Nome de Usuário" required/>
                     </p>
                     <p>
                         Igreja: <br/>
-                        <select id="inChurch" required>
+                        <select id="inChurch" onChange={(e) => setChurch(e.target.value)} required>
                             <option></option>
                             <option>Comunidade Cristã Videira</option>
                             <option>Comunidade das Nações</option>
@@ -72,32 +74,32 @@ export default function SignUp() {
                     </p>
                     <p>
                         Data de Nascimento: <br/>
-                        <input type="date" id="inBirthday" required/>
+                        <input type="date" id="inBirthday" onChange={(e) => setBirthday(e.target.value)} required/>
                     </p>
                     <p>
                         Telefone: <br/>
-                        <input type="tel" id="inPhone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" max="12" required/>
+                        <input type="tel" id="inPhone"  max="12" onChange={(e) => setPhone(e.target.value)} required/>
                     </p>
                     <p>
                         E-mail: <br/>
-                        <input type="email" id="inEmail" required/>
+                        <input type="email" id="inEmail" onChange={(e) => setEmail(e.target.value)} required/>
                     </p>
                     <p>
                         Peso atual (kg): <br/>
-                        <input type="number" id="inWeight" min="1" step="0.1" required/>
+                        <input type="number" id="inWeight" min="1" step="0.1" onChange={(e) => setWeight(e.target.value)} required/>
                     </p>
                     <p>
                         Altura (mt): <br/>
-                        <input type="number" id="inHeight" min="1" step="0.01" required/>
+                        <input type="number" id="inHeight" min="1" step="0.01" onChange={(e) => setHeight(e.target.value)} required/>
                     </p>
                     <p>
                         Sexo:<br/>
-                        <input type="radio" id="inMale" name="sexo" required></input><label>Masculino</label><br/>
-                        <input type="radio" id="inFemale" name="sexo" required></input><label>Feminino</label>
+                        <input type="radio" id="inMale" name="gender" onChange={(e) => setGender('m')} required></input><label>Masculino</label><br/>
+                        <input type="radio" id="inFemale" name="gender" onChange={(e) => setGender('f')} required></input><label>Feminino</label>
                     </p>
                     <p>
                         Objetivo Principal: <br/>
-                        <select id="objetivo" required>
+                        <select id="objetivo" onChange={(e) => setGoal(e.target.value)} required>
                             <option></option>
                             <option value="inConstancia">Constância na leitura</option>
                             <option value="inEmagrecimento">Emagrecimento</option>
@@ -108,10 +110,10 @@ export default function SignUp() {
                     </p>
                     <p>
                         Senha: <br/>
-                        <input type="password" id="inPassword" minLength="8" required/>
+                        <input type="password" id="inPassword" minLength="8" onChange={(e) => setPassword(e.target.value)} required/>
                     </p>                 
-                    <input type="checkbox" required/> Ao enviar confirmo e aceito os <Link href="/rules">Termos e condições</Link><br/>
-                    <input type="submit" value="Inscrever" required/>
+                    <input type="checkbox" onChange={(e) => setTerms(e.target.value)} required/> Ao enviar confirmo e aceito os <Link href="/rules">Termos e condições</Link><br/>
+                    <input type="submit" onClick={register} value="Registrar" required />
                 </form>
 
             </div>

@@ -1,25 +1,29 @@
 {
-    "usuario": [
-        { 
-        "name": "Rafael Oliveira", 
-        "username": "rafasdoliveira", 
-        "church": "Comunidade Cristã Videira",
-        "birthday": "26/01/2001",
-        "phone": 85997995271, 
-        "e-mail": "rafasdoliveira@outlook.com",
-        "weight": 82,
-        "height": 1.82,
-        "gender": "Masculino",
-        "goal": "Hipertrofia",
-        "terms": true,
-        "password": 12345
+  "users": [
+    {
+      "id": 1,
+      "name": "Rafael Oliveira",
+      "username": "rafasdoliveira",
+      "church": "Comunidade Cristã Videira",
+      "birthday": "26/01/2001",
+      "phone": 85997995271,
+      "email": "rafasdoliveira@outlook.com",
+      "weight": 82,
+      "height": 1.82,
+      "gender": "Masculino",
+      "goal": "Hipertrofia",
+      "terms": true,
+      "password": 12345
     }
-    ],
-
-    "desafio": [
-        {
-        "username": "rafasdoliveira"
-        
-    } 
+],
+    "challenge": [
+    {
+      "id": 1,
+      "username": "rafasdoliveira", 
+      "task": "Treino",
+      "book": "Gênesis",
+      "workout": "Corrida",
+      "photourl": "http:llllll"   
+    }
     ]
 }
