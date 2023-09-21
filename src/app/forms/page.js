@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "./page.module.css"
 import { useState } from "react";
+import axios from "axios";
 
 export default function Forms() {
 
@@ -11,6 +12,25 @@ export default function Forms() {
     const [book, setBook] = useState('')
     const [workout, setWorkout] = useState('')
     const [photourl, setPhotourl] = useState('')
+
+    function forward() {
+        axios.post('http://localhost:8081/challenge', {
+        username: username,
+        task: task,
+        book: book,
+        workout: workout,
+        photourl: photourl
+    },
+        )
+        .then(function (response) {
+            alert("Enviado com sucesso")
+            console.log(response);
+      })
+        .catch(function (error) {
+            alert("Ops! Algo deu errado.. Fale com o Rafael!")
+            console.log(error);
+      });
+    }
 
     return(
         <div>
@@ -21,7 +41,7 @@ export default function Forms() {
                 <form>
                     <p>
                         Usuário: <br/>
-                        <select>
+                        <select onChange={(e) => setUsername(e.target.value)}>
                             <option></option>
                             <option>rafasdoliveira</option>
                             <option>jeosafaferreira</option>
@@ -39,7 +59,7 @@ export default function Forms() {
                     {task == "Leitura" &&    
                     <p>
                     Selecione o livro vc leu:<br/>    
-                    <select>
+                    <select onChange={(e) => setBook(e.target.value)}>
                         <option>Gênesis</option>
                         <option>Êxodo</option>
                         <option>Levítico</option>
@@ -50,7 +70,7 @@ export default function Forms() {
                     {task == "Treino" &&
                     <p>
                     Selecione sua atividade<br/>
-                    <select>
+                    <select onChange={(e) => setWorkout(e.target.value)}>
                         <option>Corrida</option>
                         <option>Crossfit</option>
                         <option>Funcional</option>
@@ -60,13 +80,13 @@ export default function Forms() {
                     }
                     <p>
                         Envie sua foto!<br/>
-                        <input type="file" required/>
+                        <input type="file" onChange={(e) => setPhotourl(e.target.value)} required/>
                     </p>
                     <p>
                         Senha: <br/>
                         <input type="password" id="inPassword" minLength="8"  required/>
                     </p>     
-                    <input type="submit" value="Enviar Atividade"/>
+                    <input type="submit" value="Enviar Atividade" onClick={forward}/>
                 </form>
             </div>
             <div className={styles.links}>

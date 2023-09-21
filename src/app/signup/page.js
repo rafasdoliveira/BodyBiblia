@@ -42,7 +42,7 @@ export default function SignUp() {
                 console.log(response);
           })
             .catch(function (error) {
-                alert("Algo de errado não está certo")
+                alert("Ops! Algo deu errado.. Fale com o Rafael!")
                 console.log(error);
           });
     }

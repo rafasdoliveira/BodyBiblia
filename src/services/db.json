@@ -1,7 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "Rafael Oliveira",
       "username": "rafasdoliveira",
       "church": "Comunidade Cristã Videira",
@@ -13,17 +12,26 @@
       "gender": "Masculino",
       "goal": "Hipertrofia",
       "terms": true,
-      "password": 12345
+      "password": 12345,
+      "id": 1
     }
-],
-    "challenge": [
+  ],
+  "challenge": [
     {
       "id": 1,
-      "username": "rafasdoliveira", 
+      "username": "rafasdoliveira",
       "task": "Treino",
       "book": "Gênesis",
       "workout": "Corrida",
-      "photourl": "http:llllll"   
+      "photourl": "http:llllll"
+    },
+    {
+      "username": "jeosafaferreira",
+      "task": "Treino",
+      "book": "",
+      "workout": "Funcional",
+      "photourl": "C:\\fakepath\\IMG_9159 - @rafasdoliveira (2).jpg",
+      "id": 2
     }
-    ]
+  ]
 }
