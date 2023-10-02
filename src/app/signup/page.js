@@ -82,7 +82,12 @@ export default function SignUp() {
                     </p>
                     <p>
                         E-mail: <br/>
-                        <input type="email" id="inEmail" onChange={(e) => setEmail(e.target.value)} required/>
+                        <input 
+                        type="email" 
+                        id="inEmail" 
+                        pattern="/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i"
+                        onChange={(e) => setEmail(e.target.value)} 
+                        required/>
                     </p>
                     <p>
                         Peso atual (kg): <br/>
