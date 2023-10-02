@@ -8,7 +8,7 @@ import styles from "./page.module.css"
 export default function Envios() {
     
     const[envios, setEnvios] = useState('')
-    function sents() {
+    
     const getEnvios = async () => {
         const res = await axios.get('http://localhost:8081/challenge')
         setEnvios(res.data)
@@ -19,7 +19,7 @@ export default function Envios() {
         useEffect(() => {
             getEnvios()
         }, [])
-    }
+    
 
     return(
         <div>
@@ -32,11 +32,7 @@ export default function Envios() {
                         Nome de usuário: <br/>
                         <input type="text" required/>
                     </p>
-                    <p>
-                        E-mail de cadastro: <br/>
-                        <input type="email" required/>
-                    </p>
-                    <input type="submit" onClick={sents} value="Consultar Envios"/>
+                    <input type="submit"  value="Consultar Envios"/>
                 </form>
             </div>
             <div className={styles.links}>
