@@ -69,7 +69,7 @@ export default function SignUp() {
                     <p>
                         Igreja: <br/>
                         <select id="inChurch" onChange={(e) => setChurch(e.target.value)} required>
-                            <option></option>
+                            <option disabled selected>Escolha sua igreja</option>
                             <option>Comunidade Cristã Videira</option>
                             <option>Comunidade das Nações</option>
                             <option>Paz Church</option>
@@ -119,7 +119,13 @@ export default function SignUp() {
                     </p>
                     <p>
                         Senha: <br/>
-                        <input type="password" id="inPassword" minLength="8" onChange={(e) => setPassword(e.target.value)} required/>
+                        <input 
+                        type="password" 
+                        id="inPassword" 
+                        minLength="8" 
+                        pattern="[A-Za-z]{3}" 
+                        onChange={(e) => setPassword(e.target.value)} 
+                        required/>
                     </p>                 
                     <input type="checkbox" onChange={(e) => setTerms(e.target.value)} required/> Ao enviar confirmo e aceito os <Link href="/rules">Termos e condições</Link><br/>
                     <input type="submit" onClick={register} value="Registrar" required />
