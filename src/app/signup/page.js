@@ -122,7 +122,6 @@ export default function SignUp() {
                         type="password" 
                         id="inPassword" 
                         minLength="8" 
-                        pattern="[A-Za-z]{3}" 
                         onChange={(e) => setPassword(e.target.value)} 
                         required/>
                     </p>                 
