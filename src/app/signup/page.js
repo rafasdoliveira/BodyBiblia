@@ -88,8 +88,7 @@ export default function SignUp() {
                         E-mail: <br/>
                         <input 
                         type="email" 
-                        id="inEmail" 
-                        pattern="/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i"
+                        id="inEmail"
                         onChange={(e) => setEmail(e.target.value)} 
                         required/>
                     </p>
