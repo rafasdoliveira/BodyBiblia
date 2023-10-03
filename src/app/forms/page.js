@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import styles from "./page.module.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Forms() {
 
+    const [users, setUsers] = useState([])
     const [username, setUsername] = useState('')
     const [task, setTask] = useState('')
     const [book, setBook] = useState('')
@@ -14,23 +15,41 @@ export default function Forms() {
     const [photourl, setPhotourl] = useState('')
 
     function forward() {
+        
         axios.post('http://localhost:8081/challenge', {
-        username: username,
-        task: task,
-        book: book,
-        workout: workout,
-        photourl: photourl
+            username: username,
+            task: task,
+            book: book,
+            workout: workout,
+            photourl: photourl,
+            date: new Date()
     },
         )
         .then(function (response) {
             alert("Enviado com sucesso")
             console.log(response);
+            // router.push("/")
       })
         .catch(function (error) {
             alert("Ops! Algo deu errado.. Fale com o Rafael!")
             console.log(error);
       });
     }
+
+    async function getUsers() {
+        try {
+            const response = await axios.get('http://localhost:8081/users');
+            setUsers(response.data)
+            console.log(users);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
+        getUsers()
+        console.log(new Date().toLocaleString("pt-BR", {timeZone: "America/Fortaleza"}))
+    },[])
 
     return(
         <div>
@@ -42,9 +61,11 @@ export default function Forms() {
                     <p>
                         Usuário: <br/>
                         <select onChange={(e) => setUsername(e.target.value)}>
-                            <option></option>
-                            <option>rafasdoliveira</option>
-                            <option>jeosafaferreira</option>
+                            {users.map((user) => (
+                                <option key={user.id}>{user.username}</option>
+                            ))}
+                            
+                            
                         </select>
                     </p>
                     <p>
@@ -82,11 +103,7 @@ export default function Forms() {
                         Envie sua foto!<br/>
                         <input type="file" onChange={(e) => setPhotourl(e.target.value)} required/>
                     </p>
-                    <p>
-                        Senha: <br/>
-                        <input type="password" id="inPassword" minLength="8"  required/>
-                    </p>     
-                    <input type="submit" value="Enviar Atividade" onClick={forward}/>
+                 <input type="submit" value="Enviar Atividade" onClick={forward}/>
                 </form>
             </div>
             <div className={styles.links}>

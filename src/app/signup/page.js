@@ -4,10 +4,12 @@ import Link from "next/link"
 import axios from "axios"
 import styles from "./page.module.css"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 
 export default function SignUp() {
-
+    
+    const router = useRouter()
     const [name, setName] = useState('')
     const [username, setUsername] = useState('')
     const [church, setChurch] = useState('')
@@ -37,9 +39,11 @@ export default function SignUp() {
             password: password
         }, 
             )
+            
             .then(function (response) {
                 alert("Cadastro realizado com sucesso")
                 console.log(response);
+                router.push("/")
           })
             .catch(function (error) {
                 alert("Ops! Algo deu errado.. Fale com o Rafael!")
