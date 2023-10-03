@@ -22,7 +22,7 @@ export default function Forms() {
             book: book,
             workout: workout,
             photourl: photourl,
-            date: new Date()
+            date: new Date().toLocaleString("pt-BR", {timeZone: "America/Fortaleza"})
     },
         )
         .then(function (response) {
@@ -48,7 +48,6 @@ export default function Forms() {
 
     useEffect(() => {
         getUsers()
-        console.log(new Date().toLocaleString("pt-BR", {timeZone: "America/Fortaleza"}))
     },[])
 
     return(
