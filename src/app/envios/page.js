@@ -44,10 +44,10 @@ export default function Envios() {
 
             {challenges.map((challenge => 
                 <ul>
-                    <li>O usuário {challenge.username}</li>
-                    <li>No dia {challenge.date}</li>
-                    <li>Treinou <strong>{challenge.workout}</strong></li>
-                    <li>Leu {challenge.book}</li>
+                    <li key={challenge.id}>O usuário {challenge.username}</li>
+                    <li key={challenge.id}>No dia {challenge.date}</li>
+                    <li ket={challenge.id}>Treinou <strong>{challenge.workout}</strong></li>
+                    <li ket={challenge.id}>Leu {challenge.book}</li>
                 </ul>
             ))}
   
