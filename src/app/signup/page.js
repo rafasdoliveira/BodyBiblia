@@ -57,7 +57,6 @@ export default function SignUp() {
                 <h1>Inscreva-se</h1>
             </div>
             <div>
-                <form>
                     <p>
                         Nome: <br/>
                         <input type="text" id="inName" onChange={(e) => setName(e.target.value)} placeholder="Nome e Sobrenome" required/>
@@ -127,8 +126,6 @@ export default function SignUp() {
                     </p>                 
                     <input type="checkbox" onChange={(e) => setTerms(e.target.value)} required/> Ao enviar confirmo e aceito os <Link href="/rules">Termos e condições</Link><br/>
                     <input type="submit" onClick={register} value="Registrar" required />
-                </form>
-
             </div>
             <div className={styles.links}>
                 <Link href="/">Voltar para página principal</Link>
