@@ -1,10 +1,15 @@
 'use client'
 
-import Link from "next/link"
-import axios from "axios"
-import styles from "./page.module.css"
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import Title from '../components/title/title'
+import Input from '../components/form/input/input'
+import Select from '../components/form/select/select'
+import Radio from '../components/form/radio/radio'
+import Button from '../components/button/button'
+// import Link from 'next/link'
+import axios from 'axios'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import styles from './page.module.css'
 
 
 export default function SignUp() {
@@ -22,6 +27,10 @@ export default function SignUp() {
     const [goal, setGoal] = useState('')
     const [terms, setTerms] = useState('')
     const [password, setPassword] = useState('')
+
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+      };
 
     function register(){
         axios.post('http://localhost:8081/users',{
@@ -54,81 +63,50 @@ export default function SignUp() {
     return(
         <div>
             <div>
-                <h1>Inscreva-se</h1>
+                <Title text='Inscreva-se' />
             </div>
             <div>
-                    <p>
-                        Nome: <br/>
-                        <input type="text" id="inName" onChange={(e) => setName(e.target.value)} placeholder="Nome e Sobrenome" required/>
-                    </p>
-                    <p>
-                        Nome de usuário: <br/>
-                        <input type="text" id="inUser" onChange={(e) => setUsername(e.target.value)} placeholder="Nome de Usuário" required/>
-                    </p>
-                    <p>
-                        Igreja: <br/>
-                        <select id="inChurch" onChange={(e) => setChurch(e.target.value)} required>
-                            <option disabled selected>Escolha sua igreja</option>
-                            <option>Comunidade Cristã Videira</option>
-                            <option>Comunidade das Nações</option>
-                            <option>Paz Church</option>
-                        </select>
-                        
-                    </p>
-                    <p>
-                        Data de Nascimento: <br/>
-                        <input type="date" id="inBirthday" onChange={(e) => setBirthday(e.target.value)} required/>
-                    </p>
-                    <p>
-                        Telefone: <br/>
-                        <input type="tel" id="inPhone"  max="12" onChange={(e) => setPhone(e.target.value)} required/>
-                    </p>
-                    <p>
-                        E-mail: <br/>
-                        <input 
-                        type="email" 
-                        id="inEmail"
-                        onChange={(e) => setEmail(e.target.value)} 
-                        required/>
-                    </p>
-                    <p>
-                        Peso atual (kg): <br/>
-                        <input type="number" id="inWeight" min="1" step="0.1" onChange={(e) => setWeight(e.target.value)} required/>
-                    </p>
-                    <p>
-                        Altura (mt): <br/>
-                        <input type="number" id="inHeight" min="1" step="0.01" onChange={(e) => setHeight(e.target.value)} required/>
-                    </p>
+                <Input label='Nome:' type='text' id='inName' placeholder='Nome e Sobrenome'
+                onChange={(e) => setName(e.target.value)} />
+                
+                <Input label='Nome de Usuário:' type='text' id='inUser' placeholder='Nome de Usuário'
+                onChange={(e) => setUsername(e.target.value)} />
+                {/* <Select text='Objetivo Principal' /> */}
+                
+                <Input label='Data de Nascimento:' type='date' id='inBirthday'
+                onChange={(e) => setBirthday(e.target.value)} />
+                
+                <Input label='Telefone:' type='tel' id='inPhone' 
+                onChange={(e) => setPhone(e.target.value)} />
+                
+                <Input label='E-mail:' type='email' id='inMail' 
+                onChange={(e) => setEmail(e.target.value)} />
+                
+                <Input label='Gênero' type='radio' name='gender' id='inGender' 
+                onChange={(e) => setEmail(e.target.value)} />
+
+                {/* <div>
                     <p>
                         Sexo:<br/>
                         <input type="radio" id="inMale" name="gender" onChange={(e) => setGender('m')} required></input><label>Masculino</label><br/>
                         <input type="radio" id="inFemale" name="gender" onChange={(e) => setGender('f')} required></input><label>Feminino</label>
                     </p>
-                    <p>
-                        Objetivo Principal: <br/>
-                        <select id="objetivo" onChange={(e) => setGoal(e.target.value)} required>
-                            <option></option>
-                            <option value="inConstancia">Constância na leitura</option>
-                            <option value="inEmagrecimento">Emagrecimento</option>
-                            <option value="inHipertrofia">Hipertrofia</option>
-                            <option value="inRelacionamento">Relacionamento com Deus</option>
-                            <option value="inSaude">Saúde e Bem Estar</option>
-                        </select>
-                    </p>
-                    <p>
-                        Senha: <br/>
-                        <input 
-                        type="password" 
-                        id="inPassword" 
-                        minLength="8" 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        required/>
-                    </p>                 
-                    <input type="checkbox" onChange={(e) => setTerms(e.target.value)} required/> Ao enviar confirmo e aceito os <Link href="/rules">Termos e condições</Link><br/>
-                    <input type="submit" onClick={register} value="Registrar" required />
+                </div> */}
+               
+                <Input label='Peso atual (kg):' type='number' id='inWeight' min="1" step="0.1"  
+                onChange={(e) => setWeight(e.target.value)} />
+                <Input label='Altura (mt):' type='number' id='inHeight' min="1" step="0.1"  
+                onChange={(e) => setHeight(e.target.value)} />
+                {/* <Select /> */}
+                <Input label='Senha:' type='password' id='inPassword'  
+                onChange={(e) => setPassword(e.target.value)} />
+                {/* <Input type='checkbox' label=' Ao enviar confirmo e aceito os Termos e condições'  
+                onChange={(e) => setPassword(e.target.value)} /> */}
+                <Input type='submit' onClick={register} value='Registrar'  
+                onChange={(e) => setPassword(e.target.value)} />   
             </div>
-            <div className={styles.links}>
-                <Link href="/">Voltar para página principal</Link>
+            <div>
+                <Button text= "Voltar para página inicial" link="/"/>
             </div>
         </div>
     )

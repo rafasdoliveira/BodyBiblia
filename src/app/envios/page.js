@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import {  useState } from "react";
+import { Component } from "react";
 import axios from "axios";
 import styles from "./page.module.css"
 
 export default function Envios() {
-    
+
     const [challenges, setChallenges] = useState([])
     const [username, setUsername] = useState('')
 
@@ -44,12 +45,13 @@ export default function Envios() {
 
             {challenges.map((challenge => 
                 <ul key={challenge}>
-                    <li key={challenge}>O usuário {challenge.username}</li>
-                    <li key={challenge}>No dia {challenge.date}</li>
+                    <li key={challenge}>Dia {challenge.date}</li>
                     <li ket={challenge}>Treinou <strong>{challenge.workout}</strong></li>
                     <li ket={challenge}>Leu {challenge.book}</li>
                 </ul>
-            ))}
+            ))} 
+
+            
   
 
             <div className={styles.links}>

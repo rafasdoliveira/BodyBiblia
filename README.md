@@ -1,4 +1,4 @@
-# BODYBIBLIA | Challenge 
+# BODYBIBLIA | sobre nós
 
 ##### (pt-br)
 ## Descrição
@@ -21,6 +21,76 @@ O vencedor será agraciado com 50% do valor total arrecadado durante o desafio. 
 
 ###### O projeto segue em desenvolvimento buscando melhorar a interação com o usuário e agregar conhecimento para o desenvolvedor.
 
+# BODYBIBLIA - REQUISITOS
+
+## Usuário 
+### Dados necessários:
+* Nome completo
+* Nome de usuário
+* E-mail
+* Sexo
+* Data de Nascimento
+* Altura 
+* Peso
+* Igreja 
+    * Sim 
+        * Se sim, qual? 
+    * Não 
+* Objetivo Principal: 
+    * Constância na leitura
+    * Emagrecimento
+    * Hipertrofia
+    * Relacionamento com Deus
+    * Relacionamento com o grupo
+    * Saúde e Bem Estar
+
+## Grupos
+### Dados necessários:
+* Nome do Grupo
+* Usuário Responsável pelo grupo 
+	* O responsável irá definir a duração do desafio		
+	* O responsável irá definir o livro a ser lido durante o desafio
+	* O responsável irá definir os exercícios válidos em dias livres
+* Período do desafio (Data X - Data Y)
+* Valor mínimo por participante
+    * Definir porcentagem para doação (Mínimo 30%) 
+    * Definir porcentagem vencedor 
+        * Cada usuário pagará 5,00 a mais para contribuir com a manutenção da plataforma
+* Livro Escolhido (1 ou mais de um, para fechar o período)
+* Instituição para doação (Em caso de 1 vencedor)
+    * Exibir as instituições cadastradas 
+* Data para revelação do vencedor
+	* O resultado ficará disponível no dia e horário escolhido
+	* Utilizar contador de tempo a partir do virar do dia
+
+## INSTITUIÇÕES
+### Dados necessários:
+* CNPJ	
+* Representante
+    * Nome completo
+    * Contato / WhatsApp
+* Chave Pix
+* Localidade
+* Faz parte de alguma igreja? (Sim / Não / Independente) - Se sim, qual?
+	* Verificar se igreja já está cadastrada
+
+## DESAFIOS
+### Dados necessários:
+* Usúario
+* Atividade Realizada 
+    * Leitura
+        * Selecionar livro, capítulo e versículo
+        * Selecionar foto da atividade
+        * Caixa de texto para realizar comentário (obrigatório)
+    * Treino
+        * Selecionar tipo de treino
+            - Exercício objetivo
+            - Exercício livre
+        * Selecionar foto da atividade
+        * Caixa de texto para realizar comentário (se quiser)
+    * Descanso
+
+    # BODYBIBLIA | about us
 ##### (en-us)
 
 ## Description

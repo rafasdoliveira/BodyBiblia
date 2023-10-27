@@ -4,7 +4,9 @@ import styles from "./page.module.css"
 export default function Rules() {
     return(
         <div>
-            <h1>Regulamento</h1>
+            <div>
+                <Title title='Regulamento'/>
+            </div>
             <h2>
                 Leia o Regulamento abaixo:
             </h2>
@@ -39,8 +41,8 @@ export default function Rules() {
                 <p>Se o vencedor faz parte da CCVideira, 50% do prêmio será enviado para o Instituto Vida Videira</p>
                 <p>É estritamente importante que o participante informe a instituição da sua igreja no ato do cadastro</p>
             </section>
-            <div className={styles.links}>
-                <Link href="/">Voltar para página principal</Link>
+            <div>
+                <Button text= "Voltar para página inicial" link="/"/>
             </div>
         </div>
     )

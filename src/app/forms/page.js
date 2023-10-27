@@ -1,12 +1,17 @@
 'use client'
 
-import Link from "next/link";
-import styles from "./page.module.css"
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import Link from "next/link";
+import Title from '../components/title/title'
+import Button from '../components/button/button'
+import styles from './page.module.css'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
 
 export default function Forms() {
 
+    
+    const router = useRouter()
     const [users, setUsers] = useState([])
     const [username, setUsername] = useState('')
     const [task, setTask] = useState('')
@@ -28,7 +33,7 @@ export default function Forms() {
         .then(function (response) {
             alert("Enviado com sucesso")
             console.log(response);
-            // router.push("/")
+            router.push("/")
       })
         .catch(function (error) {
             alert("Ops! Algo deu errado.. Fale com o Rafael!")
@@ -51,30 +56,40 @@ export default function Forms() {
     },[])
 
     return(
-        <div>
+        //Principal
+        <div className={styles.main}>
+            {/* Título */}
             <div>
-                <h1>Formulário</h1>
+                <Title title='Formulário' />
             </div>
-            <div>
-                    <p>
-                        Usuário: <br/>
-                        <select onChange={(e) => setUsername(e.target.value)}>
-                            {users.map((user) => (
-                                <option key={user.id}>{user.username}</option>
-                            ))}
-                            
-                            
-                        </select>
-                    </p>
-                    <p>
-                        Atividade: <br/>
+            {/* Formulário de envio de atividades */}
+            <div className={styles.form}>
+                    {/* Usuário a Preencher */}
+                    <div className={styles.user}>
+                        <div className={styles.text}>
+                            Usuário:    
+                        </div>
+                        {/* Esse select exibe os usuários cadastrados */}
+                            <select onChange={(e) => setUsername(e.target.value)}>
+                                {users.map((user) => (
+                                    <option key={user.id}>{user.username}</option>
+                                ))}
+                            </select>
+                    </div>
+                    <div className={styles.task}>
+                        {/* Atividade Realizada */}
+                        <div className={styles.text}>
+                            Atividade: 
+                        </div>
+                        {/* O usuário define a atividade realizada */}
                         <select onChange={(e) => setTask(e.target.value)} required>
                             <option></option>
                             <option>Descanso</option>
                             <option>Leitura</option>
                             <option>Treino</option>
                         </select>
-                    </p>
+                    </div>                    
+                    {/* Caso o usuário escolha entre Leitura ou Treino, aparecerá um select com as */}
                     {task == "Leitura" &&    
                     <p>
                     Selecione o livro vc leu:<br/>    
@@ -166,15 +181,20 @@ export default function Forms() {
                     </select>
                     </p>
                     }
-                    <p>
-                        Envie sua foto!<br/>
-                        <input type="file" onChange={(e) => setPhotourl(e.target.value)} required/>
-                    </p>
+                    <div>
+                        <div className={styles.text}>
+                            Envie sua foto!
+                        </div>
+                        <div>
+                            <input type="file" onChange={(e) => setPhotourl(e.target.value)} required/>
+                        </div>
+                    </div>
                  <input type="submit" value="Enviar Atividade" onClick={forward}/>
             </div>
-            <div className={styles.links}>
-                <Link href="/">Voltar para página principal</Link>
+            <div>
+                <Button text= "Voltar para página inicial" link="/"/>
             </div>
+        
         </div>
         
     )
