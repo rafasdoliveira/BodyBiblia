@@ -16,10 +16,9 @@ export default function Home() {
         </p>
       </div>
       <div className={styles.botoes}> 
-        <Button text= "Inscreva-se" link="/signup" />
-        <Button text= "Regulamento" link="/rules" />
-        <Button text= "Enviar Formulário" link="/forms" />
-        <Button text= "Consultar Envios" link="/envios" />
+        <Button text= "Cadastre-se" link="/signup" />
+        <Button text= "Criar um desafio" link="/createchallenge" />
+        <Button text= "Entrar em um desafio" link="/joinchallenge" />
       </div>
       
       <Footer/>
