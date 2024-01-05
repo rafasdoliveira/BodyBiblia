@@ -5,13 +5,14 @@ function Select({text, id, name, options, value}) {
         
         <div>
             <div>
-                <label>{text}:</label>
-                <select name={name} id={id}>
-                    <option>Selecione uma opção</option>
-                    <option>{options}</option>
-                </select>
-            </div>
-            <div>
+            <label>{text}:</label>
+            <select name={name} id={id}>
+                {Object.keys(options).map(key => (
+                <option key={key}>{options[key]}</option>
+                ))}
+            </select>
+    </div>
+            {/* <div>
                 <p>
                     Objetivo Principal: <br/>
                     <select id="objetivo" onChange={(e) => setGoal(e.target.value)} required>
@@ -23,8 +24,8 @@ function Select({text, id, name, options, value}) {
                         <option value="inSaude">Saúde e Bem Estar</option>
                     </select>
                 </p>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
                 <p>
                     Igreja: <br/>
                     <select id="inChurch" onChange={(e) => setChurch(e.target.value)} required>
@@ -34,7 +35,7 @@ function Select({text, id, name, options, value}) {
                         <option>Paz Church</option>
                     </select>    
                 </p>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -5,6 +5,21 @@ import styles from './page.module.css'
 
 
 export default function createChallenge() {
+
+    const listChallenge = {
+        opcao: "Selecione uma  opção",
+        opcao1: "Atividade",
+        opcao2: "Pontos por movimentação",
+        opcao3: "Duração",
+        opcao4: "Distância", 
+        opcao5: "Passos",
+        opcao6: "Calorias"
+      };
+
+    const listBible = {
+
+    };
+
     return(
     <div>
         <div>
@@ -13,24 +28,14 @@ export default function createChallenge() {
         <div>
             <section>
                 <form>
-                    <Input label='Nome do grupo' type='text' name='gender' id='inGender'/> 
-                    // onChange={(e) => setEmail(e.target.value)} 
-                    <Input label='Descriçáo' type='text' name='gender' id='inGender' placeholder='Descrição'/>
-                    <Input label='Data de Início' type='date' name='gender' id='inGender' placeholder='Descrição'/>                    
-                    <Input label='Data Final' type='date' name='gender' id='inGender' placeholder='Descrição'/>
-                    <div>
-                        <label>Escolha um modelo de pontuação</label>
-                    </div>            
-                    <select>
-                        <option>Atividade</option>
-                        <option>Pontos por movimentação</option>
-                        <option>Duração</option>
-                        <option>Distância</option>
-                        <option>Passos</option>
-                        <option>Calorias</option>
-                    </select>
+                    <Input label='Nome do grupo' type='text' name='gender' id='inGroupName' placeholder='Defina um nome para seu grupo'/> 
+                    {/* onChange={(e) => setEmail(e.target.value)}  */}
+                    <Input label='Descrição' type='text' name='gender' id='inDescription' placeholder='Defina uma descrição para seu grupo'/>
+                    <Input label='Data de Início' type='date' name='gender' id='inStartDate'/>                    
+                    <Input label='Data Final' type='date' name='gender' id='inEndDate' placeholder='Descrição'/>        
+                    <Select name="bible" id="bible" text="Escolha um livro a ser lido" options={listBible} />
+                    <Select name="nome" id="identificador" text="Escolha um modelo de pontuação" options={listChallenge} />
                     <Input label='Data Final' type='submit' name='gender' id='inGender' placeholder='Descrição' value='Cadastrar'/>
-                    {/* <Select /> */}
                 </form>
             </section>
         </div>
