@@ -5,13 +5,13 @@ import Button from '../components/button/button'
 import styles from './page.module.css'
 import axios from 'axios'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 
 export default function createGroup() {
 
     //Constantes para capturar os valores de input
     
-    const router = useRouter()
+    // const router = useRouter()
     const [groupname, setGroupname] = useState('') 
     const [description, setDescription] = useState('')
     const [startdate, setStartdate] = useState('') 
