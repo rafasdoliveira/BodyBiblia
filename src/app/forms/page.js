@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation'
 
 export default function Forms() {
 
+    //Constantes para capturar os valores de input
     
     const router = useRouter()
     const [users, setUsers] = useState([])

@@ -10,13 +10,14 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.div1}>
         {/* <Data/> */}
-        <Title title='BodyBiblia - 3ª Edição!' />     
+        <Title title='BodyBiblia - 1ª Versão!' />     
         <p>
           Clique nos botões para interagir!
         </p>
       </div>
       <div className={styles.botoes}> 
         <Button text= "Cadastre-se" link="/signup" />
+        <Button text= "Cadastro de Igreja" link="/registerChurch" />
         <Button text= "Criar um desafio" link="/createchallenge" />
         <Button text= "Entrar em um desafio" link="/joinchallenge" />
       </div>
