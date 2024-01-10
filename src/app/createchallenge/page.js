@@ -17,6 +17,7 @@ export default function CreateGroup() {
     const [description, setDescription] = useState('')
     const [startdate, setStartdate] = useState('') 
     const [enddate, setEnddate] = useState('') 
+    const [value, setValue] = useState('') 
     const [book, setBook] = useState('') 
     const [scoremode, setScoremode] = useState('') 
 
@@ -31,6 +32,7 @@ export default function CreateGroup() {
             groupname: groupname,
             description: description,
             startdate: startdate,
+            value: value,
             enddate: enddate,
             book: book,
             scoremode: scoremode
@@ -48,18 +50,28 @@ export default function CreateGroup() {
     }
 
     //Constantes para os selects
-    const listChallenge = {
+
+    //Atividades
+    const listScoreMode = {
         opcao: "Selecione uma  opção",
-        opcao1: "Atividade",
-        opcao2: "Pontos por movimentação",
-        opcao3: "Duração",
-        opcao4: "Distância", 
-        opcao5: "Passos",
-        opcao6: "Calorias"
+        opcao1: "Ponto por atividade",
+        opcao2: "Maior distância"
       };
-
+    // Buscar os livros da Bíblia a partir da API Bíblia Online
     const listBible = {
-
+        opcao: "Selecione uma opção",
+        opcao1: "Gênesis"
+    };
+    // Buscar as instituições a partir dos cadastros das igrejas        
+    const listOsc = {
+        opcao: "Selecione uma opção",
+        opcao1: "Instituto Céu No Sertão",
+        opcao2: "Instituto Vida Videira"
+    };
+    // Definir a duração do desafio de acordo com o livro com maior quantidade de capítulos da Bíblia
+    const listNumbers = {};
+        for (let i = 1; i <= 150; i++) {
+        listNumbers[`opcao${i}`] = i.toString();
     };
 
     return(
@@ -72,16 +84,17 @@ export default function CreateGroup() {
         <div>
             <section>
                 <form>
-                    <Input label='Nome do grupo' type='text' name='inGroupName' id='inGroupName' placeholder='Defina um nome para seu grupo'
+                    <Input label='Nome do Grupo' type='text' name='inGroupName' id='inGroupName' placeholder='Nome do Grupo' required
                     onChange={(e) => setGroupname(e.target.value)} />
-                    <Input label='Descrição' type='text' name='inDescription' id='inDescription' placeholder='Defina uma descrição para seu grupo'
-                    onChange={(e) => setDescription(e.target.value)}
-                    />
-                    <Input label='Data de Início' type='date' name='inStartDate' id='inStartDate' onChange={(e) => setStartdate(e.target.value)} />                    
-                    <Input label='Data Final' type='date' name='inEndDate' id='inEndDate' onChange={(e) => setEnddate(e.target.value)} />        
-                    <Select name="inBook" id="inBook" text="Escolha um livro a ser lido" options={listBible} onChange={(e) => setBook(e.target.value)} />
-                    <Select name="inScoreMode" id="inScoreModes" text="Escolha um modelo de pontuação" options={listChallenge} onChange={(e) => setScoremode(e.target.value)} />
+                    <Input label='Descrição' type='text' name='inDescription' id='inDescription' placeholder='Descrição (Opcional)' onChange={(e) => setDescription(e.target.value)} />
+                    <Input label='Data de Início' type='date' name='inStartDate' id='inStartDate' required onChange={(e) => setStartdate(e.target.value)} />   
+                    <Select name="inNumbers" id="inNumbers" text="Defina a quantidade de dias" options={listNumbers} required onChange={(e) => setNumber(e.target.value)} />                 
+                    <Input label='Data Final' type='date' name='inEndDate' id='inEndDate' required onChange={(e) => setEnddate(e.target.value)} />   
+                    <Input label='Valor por participante' type='number' min='1' step='0.01' name='inValue' id='inValue' placeholder='Valor por participante' onChange={(e) => setValue(e.target.value)} />
+                    <Select name="inBook" id="inBook" text="Escolha um livro a ser lido" options={listBible} required onChange={(e) => setBook(e.target.value)} />
+                    <Select name="inScoreMode" id="inScoreModes" text="Escolha um modelo de pontuação" options={listScoreMode} required onChange={(e) => setScoremode(e.target.value)} />
                     <Input type='submit' onClick={createChallenge} value='Registrar' /> 
+                    
                 </form>
             </section>
             <div>

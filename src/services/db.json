@@ -15,21 +15,6 @@
       "password": 12345,
       "date-hour": 111,
       "id": 1
-    },
-    {
-      "name": "Rafael Silva de Oliveira",
-      "username": "Rafael Silva de Oliveira",
-      "church": "",
-      "birthday": "2001-01-26",
-      "phone": "85998455195",
-      "email": "rafasdoliveira@outlook.com",
-      "weight": "11",
-      "height": "11",
-      "gender": "on",
-      "goal": "",
-      "terms": "on",
-      "password": "1111111111",
-      "id": 2
     }
   ],
   "individualchallenge": [
@@ -41,26 +26,6 @@
       "photourl": "http:llllll",
       "date": "25/01/2000",
       "id": 1
-    }
-  ],
-  "createchallenge": [
-    {
-      "groupname": "Gc Chronos",
-      "description": "BORAAA",
-      "startdate": "01/02/2024",
-      "enddate": "01/02/2024",
-      "book": "Jeremias",
-      "scoremode": "Workout",
-      "id": 1
-    },
-    {
-      "groupname": "a",
-      "description": "a",
-      "startdate": "1111-11-11",
-      "enddate": "1111-11-11",
-      "book": "",
-      "scoremode": "",
-      "id": 2
     }
   ]
 }
