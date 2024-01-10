@@ -1,4 +1,5 @@
 'use client'
+
 import Input from '../components/form/input/input'
 import Select from '../components/form/select/select'
 import Button from '../components/button/button'
@@ -7,7 +8,7 @@ import axios from 'axios'
 import { useState } from 'react'
 // import { useRouter } from 'next/navigation'
 
-export default function createGroup() {
+export default function CreateGroup() {
 
     //Constantes para capturar os valores de input
     
