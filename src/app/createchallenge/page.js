@@ -81,7 +81,7 @@ export default function CreateGroup() {
                     <Input label='Data Final' type='date' name='inEndDate' id='inEndDate' onChange={(e) => setEnddate(e.target.value)} />        
                     <Select name="inBook" id="inBook" text="Escolha um livro a ser lido" options={listBible} onChange={(e) => setBook(e.target.value)} />
                     <Select name="inScoreMode" id="inScoreModes" text="Escolha um modelo de pontuação" options={listChallenge} onChange={(e) => setScoremode(e.target.value)} />
-                    <Input type='submit' onClick={createGroup} value='Registrar' /> 
+                    <Input type='submit' onClick={createChallenge} value='Registrar' /> 
                 </form>
             </section>
             <div>
