@@ -1,11 +1,13 @@
+import styles from './input.module.css'
+
 function Input({label, type, name, id, placeholder, min, max, step, value, onChange, onClick}) {
     return(
-        <div>
-            <div>
+        <div className={styles.inputComponent}>
+            <div className={styles.label}>
                 {label}
-            </div>
-            <div>
-                <input 
+            </div>  
+            <div>       
+                <input className={styles.input}
                 type={type} 
                 name={name}
                 id={id} 
@@ -19,7 +21,6 @@ function Input({label, type, name, id, placeholder, min, max, step, value, onCha
                 required
                 />
             </div>
-            
         </div>
     )
 }

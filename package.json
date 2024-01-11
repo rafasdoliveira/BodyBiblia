@@ -21,5 +21,9 @@
   },
   "devDependencies": {
     "parcel": "^2.9.3"
-  }
+  },
+  "description": "O Desafio BodyBiblia nasceu com a intenção de instigar motivação, proporcionar incentivo e promover uma competição saudável entre os participantes, abrangendo tanto as dimensões físicas quanto espirituais.",
+  "main": "next.config.js",
+  "author": "",
+  "license": "ISC"
 }
