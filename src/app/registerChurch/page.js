@@ -8,7 +8,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-export default function registerChurch() {
+export default function RegisterChurch() {
 
      //Constantes para capturar os valores de input
     
