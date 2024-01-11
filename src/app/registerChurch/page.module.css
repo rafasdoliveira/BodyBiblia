@@ -1,0 +1,23 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 70rem;
+    max-width: 980;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+    align-items: center;
+    justify-content: center;
+}
