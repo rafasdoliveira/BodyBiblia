@@ -6,6 +6,7 @@ import Button from '../components/button/button'
 import styles from './page.module.css'
 import axios from 'axios'
 import { useState } from 'react'
+import Title from '../components/title/title'
 // import { useRouter } from 'next/navigation'
 
 export default function CreateGroup() {
@@ -20,7 +21,7 @@ export default function CreateGroup() {
     const [value, setValue] = useState('') 
     const [book, setBook] = useState('') 
     const [scoremode, setScoremode] = useState('') 
-    const [number, setNumber] = useState('')
+    // const [number, setNumber] = useState('')
 
     //Essa função é comumente utilizada em componentes React para gerenciar o estado de um campo de formulário.
     // const handleInputChange = (e) => {
@@ -33,8 +34,8 @@ export default function CreateGroup() {
             groupname: groupname,
             description: description,
             startdate: startdate,
-            value: value,
             enddate: enddate,
+            value: value,
             book: book,
             scoremode: scoremode
         },
@@ -81,9 +82,7 @@ export default function CreateGroup() {
     return(
     <div>
         <div>
-            <h1>
-                Crie um desafio
-            </h1>
+            <Title title='Crie seu desafio'/>
         </div>
         <div>
             <section>
@@ -97,8 +96,7 @@ export default function CreateGroup() {
                     <Input label='Valor por participante' type='number' min='1' step='0.01' name='inValue' id='inValue' placeholder='Valor por participante' onChange={(e) => setValue(e.target.value)} />
                     <Select name="inBook" id="inBook" text="Escolha um livro a ser lido" options={listBible} required onChange={(e) => setBook(e.target.value)} />
                     <Select name="inScoreMode" id="inScoreModes" text="Escolha um modelo de pontuação" options={listScoreMode} required onChange={(e) => setScoremode(e.target.value)} />
-                    <Input type='submit' onClick={createChallenge} value='Registrar' /> 
-                    
+                    <Input type='submit' onClick={createChallenge} value='Registrar' link="/" />  
                 </form>
             </section>
             <div>

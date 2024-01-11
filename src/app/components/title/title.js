@@ -1,7 +1,9 @@
+import styles from './title.module.css'
+
 export default function Title({title}) {
     return(
-        <div> 
-            <h1> {title} </h1> 
+        <div className={styles.title}> 
+            <h1>{title}</h1> 
         </div>
     )
 }
