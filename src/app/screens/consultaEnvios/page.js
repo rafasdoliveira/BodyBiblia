@@ -1,10 +1,13 @@
 'use client'
 
-import Link from "next/link";
-import {  useState } from "react";
-import { Component } from "react";
-import axios from "axios";
-import styles from "./page.module.css"
+import { useState } from 'react'
+import Link from 'next/link'
+import axios from 'axios'
+
+import '@/src/app/components/form/input/'
+import Title from '@/src/app/components/title/title'
+
+import styles from './page.module.css'
 
 export default function Envios() {
 
@@ -33,14 +36,13 @@ export default function Envios() {
     return(
         <div>
             <div>
-                <h1>Envios</h1>
-            </div>
-            <div>
-                    <p>
-                        Nome de usuário: <br/>
-                        <input type="text" onChange={(e) => setUsername(e.target.value)} required/>
-                    </p>
-                    <input type="submit"  value="Consultar Envios" onClick={getEnvios} />
+                <div>
+                    <Title title='Envios'/>
+                </div>
+                <div>
+                    <Input label='Nome de Usuário' type='text' name='inUsername' id='inUsername' placeholder='Nome de Usuário' required onChange={(e) => setUsername(e.target.value)} />
+                    <Input type='submit' onClick={getEnvios} value='Consultar' link="/"/>
+                </div>                     
             </div>
 
             {challenges.map((challenge => 
@@ -50,10 +52,7 @@ export default function Envios() {
                     <li ket={challenge}>Leu {challenge.book}</li>
                 </ul>
             ))} 
-
             
-  
-
             <div className={styles.links}>
                 <Link href="/">Voltar para página principal</Link>
             </div>

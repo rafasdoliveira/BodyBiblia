@@ -3,11 +3,13 @@ import styles from './button.module.css'
 
 function Button(props) {
     return(
-        <div className={styles.buttonComponent}>
-            <div className={styles.button} >
-                <Link href={props.link}>{props.text}</Link>
+        <Link href={props.link}>
+            <div className={styles.buttonComponent}>
+                <div className={styles.button} >
+                    {props.text}
+                </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

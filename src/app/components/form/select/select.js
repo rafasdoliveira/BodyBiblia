@@ -1,6 +1,6 @@
 import styles from './select.module.css'
 
-function Select({text, id, name, options, value}) {
+function Select({text, id, name, options, value, onChange}) {
     return(
         
         <div className={styles.selectComponent}>
@@ -8,7 +8,7 @@ function Select({text, id, name, options, value}) {
                 <label>{text}</label>
             </div>
             <div>
-                <select className={styles.select} name={name} id={id}>
+                <select onChange={onChange} className={styles.select} name={name} id={id}>
                     {Object.keys(options).map(key => (
                     <option className={styles.option} key={key}>{options[key]}</option>
                     ))}

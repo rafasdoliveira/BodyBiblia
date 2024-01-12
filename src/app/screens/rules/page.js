@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css"
-import Title from "../components/title/title";
-import Button from "../components/button/button";
+import Title from "../../components/title/title";
+import Button from "../../components/button/button";
 
 export default function Rules() {
     return(

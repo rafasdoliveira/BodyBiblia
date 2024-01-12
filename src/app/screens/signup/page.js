@@ -1,9 +1,9 @@
 'use client'
 
-import Title from '../components/title/title'
-import Input from '../components/form/input/input'
-import Select from '../components/form/select/select'
-import Button from '../components/button/button'
+import Title from '../../components/title/title'
+import Input from '../../components/form/input/input'
+import Select from '../../components/form/select/select'
+import Button from '../../components/button/button'
 // import Link from 'next/link'
 import axios from 'axios'
 import { useState } from 'react'

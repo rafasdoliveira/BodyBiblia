@@ -1,8 +1,8 @@
 'use client'
 
-import Title from "../components/title/title"
-import Input from "../components/form/input/input"
-import Select from "../components/form/select/select"
+import Title from "../../components/title/title"
+import Input from "../../components/form/input/input"
+import Select from "../../components/form/select/select"
 import styles from './page.module.css'
 import axios from 'axios'
 import { useState } from 'react'
