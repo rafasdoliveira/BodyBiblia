@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import axios from 'axios'
 
-import '@/src/app/components/form/input/'
+import '@/src/app/components/form/input/input'
 import Title from '@/src/app/components/title/title'
 
 import styles from './page.module.css'
