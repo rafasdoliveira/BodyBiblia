@@ -56,7 +56,7 @@ export default function Forms() {
     }
     useEffect(() => {
         getUsers()
-    },[])
+    })
 
 
     //Consumo de API RESTFul da Bíblia
