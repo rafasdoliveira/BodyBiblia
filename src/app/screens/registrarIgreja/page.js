@@ -124,6 +124,9 @@ export default function RegisterChurch() {
                     </section>
                     <Input type='submit' onClick={registerChurch} value='Registrar' />    
                 </form>
+                <div>
+                <Button text= "Voltar para página inicial" link="/"/>
+                </div>
             </div>
         </div>
     )
