@@ -1,6 +1,6 @@
 import styles from './input.module.css'
 
-function Input({label, type, name, id, placeholder, min, max, step, value, onChange, onClick}) {
+export default function Input({label, type, name, id, placeholder, min, max, step, value, onChange, onClick}) {
     return(
         <div className={styles.inputComponent}>
             <div className={styles.label}>
@@ -25,4 +25,3 @@ function Input({label, type, name, id, placeholder, min, max, step, value, onCha
     )
 }
 
-export default Input

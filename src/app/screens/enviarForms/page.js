@@ -16,7 +16,7 @@ export default function Forms() {
     //Constantes para capturar os valores de input
     const router = useRouter()
     const [users, setUsers] = useState([])
-    const [books, setBooks] = useState([])
+    const [livros, setLivros] = useState([])
     const [username, setUsername] = useState('')
     const [atividade, setAtividade] = useState('')
     const [livro, setLivro] = useState('')
@@ -60,11 +60,11 @@ export default function Forms() {
 
 
     //Consumo de API RESTFul da Bíblia
-    async function getBooks() {
+    async function getLivros() {
         try {
           const response = await axios.get('https://www.abibliadigital.com.br/api/books');
-          setBooks(response.data);
-          console.log(books)
+          setLivros(response.data);
+          console.log(livros)
         } catch (error) {
           console.error(error);
         }
@@ -87,8 +87,8 @@ export default function Forms() {
         option4: 'Treino'
     }
 
-    const listLivros = books.map((book) => (
-        <option key={book.id}>{book.name}</option>
+    const listLivros = livros.map((livro) => (
+        <option key={livro.id}>{livro.name}</option>
       ));
 
     const listTreinos = {

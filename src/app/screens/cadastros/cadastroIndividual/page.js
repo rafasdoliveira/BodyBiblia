@@ -1,17 +1,17 @@
 'use client'
 
-import Title from '../../components/title/title'
-import Input from '../../components/form/input/input'
-import Select from '../../components/form/select/select'
-import Button from '../../components/button/button'
-// import Link from 'next/link'
-import axios from 'axios'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import axios from 'axios'
+
+import Title from "@/src/app/components/title/title"
+import Input from "@/src/app/components/form/input/input"
+import Select from "@/src/app/components/form/select/select"
+import Button from '@/src/app/components/button/button'
+
 import styles from './page.module.css'
 
-
-export default function SignUp() {
+export default function CadastroIndividual() {
     
     //Constantes para capturar os valores de input
     
@@ -22,15 +22,12 @@ export default function SignUp() {
     const [birthday, setBirthday] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
-    const [weight, setWeight] = useState('')
-    const [height, setHeight] = useState('')
     const [gender, setGender] = useState('')
     const [goal, setGoal] = useState('')
-    const [terms, setTerms] = useState('')
     const [password, setPassword] = useState('')
 
     //Função utilizada para registrar os dados no banco
-    function register(){
+    function cadastroIndividual(){
     
         axios.post('http://localhost:8081/users',{
             name: name,
@@ -58,8 +55,6 @@ export default function SignUp() {
                 console.log(error);
           });
     }
-
-
 
     //Constantes para os selects
     const listGoal = {
@@ -91,8 +86,6 @@ export default function SignUp() {
         opcao2: "Masculino"
     };
 
-    
-
     return(
         <div>
             <div>
@@ -107,20 +100,9 @@ export default function SignUp() {
                     <Input label='E-mail:' type='email' id='inMail' placeholder='E-mail mais utlizado' onChange={(e) => setEmail(e.target.value)} />
                     <Select name='inGoal' id='inGoal' text='Objetivo Principal' options={listGoal} onChange={(e) => setGoal(e.target.value)} />
                     <Select name='inGender' id='inGender' text='Gênero' options={listGender} onChange={(e) => setGender(e.target.value)} />
-                    {/* Utilizar esse bloco uma outra hora */}
-                    {/* <div className={styles.signupGender}>
-                        <label>Gênero:</label>
-                        <Input label='Masculino' type='radio' name='gender' id='inGender' 
-                        onChange={(e) => setGender(e.target.value)} />
-                        <Input label='Feminino' type='radio' name='gender' id='inGender' 
-                        onChange={(e) => setGender(e.target.value)} />                                   
-                        </div>
-                        <Input label='Peso atual (kg):' type='number' id='inWeight' min="1" step="0.1" placeholder='Peso em quilos' onChange={(e) => setWeight(e.target.value)} />
-                    <Input label='Altura (mt):' type='number' id='inHeight' min="1" step="0.1" onChange={(e) => setHeight(e.target.value)} /> */}
                     <Select name='inChurch' id='inChurch' text='Qual sua igreja?' options={listChurch} onChange={(e) => setChurch(e.target.value)} />
                     <Input label='Defina uma senha:' type='password' id='inPassword' onChange={(e) => setPassword(e.target.value)} /> 
-                    {/* <Input label='Aceito os Termos e Condições' type='checkbox' id='inTerms' onChange={(e) => setTerms(e.target.value)} />  */}
-                    <Input type='submit' onClick={register} value='Registrar' />   
+                    <Input type='submit' onClick={cadastroIndividual} value='Registrar' />   
                 </form>
             </div>
             <div>

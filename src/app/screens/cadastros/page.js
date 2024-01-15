@@ -6,16 +6,16 @@ import styles from '@/src/app/page.module.css'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.div1}>
+    <main>
+      <div>
         <Title title='BodyBiblia - 1ª Versão!' />     
-        <p>
-          Clique nos botões para interagir!
-        </p>
       </div>
-      <div className={styles.botoes}> 
-        <Button text= "Cadastros" link="/screens/cadastros" />
-        <Button text= "Desafios" link="/screens/desafios" />
+      <div> 
+        <Button text= "Cadastro Individual" link="/screens/cadastros/cadastroIndividual" />
+        <Button text= "Cadastro Igreja" link="/screens/caIgreja" />
+      </div>
+      <div>
+        <Button text= "Voltar para página inicial" link="/"/>
       </div>
       <Footer/>
     </main>

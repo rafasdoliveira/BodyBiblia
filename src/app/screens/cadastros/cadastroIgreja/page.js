@@ -1,15 +1,16 @@
 'use client'
-
-import Title from "../../components/title/title"
-import Input from "../../components/form/input/input"
-import Select from "../../components/form/select/select"
-import Button from '@/src/app/components/button/button'
-import styles from './page.module.css'
-import axios from 'axios'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import axios from 'axios'
 
-export default function RegisterChurch() {
+import Title from "@/src/app/components/title/title"
+import Input from "@/src/app/components/form/input/input"
+import Select from "@/src/app/components/form/select/select"
+import Button from '@/src/app/components/button/button'
+
+import styles from './page.module.css'
+
+export default function CadastroIgreja() {
 
      //Constantes para capturar os valores de input
     
@@ -30,7 +31,7 @@ export default function RegisterChurch() {
      const [cidade, setCidade] = useState('')
      const [uf, setUF] = useState('')
 
-     function registerChurch(){
+     function cadastrarIgreja(){
     
         axios.post('http://localhost:8081/registerchurch',{
             username: username,
@@ -87,10 +88,8 @@ export default function RegisterChurch() {
                         <div className={styles.data}>
                             <Input label='Usúario:' type='text' id='inUser' placeholder='Usuário de acordo com o cadastrado' onChange={(e) => setUsername(e.target.value)} />
                             <Select name='inVinculo' id='inVinculo' text='Qual seu vínculo com a igreja?' options={listVinculo} onChange={(e) => setVinculo(e.target.value)} />    
-                        </div>
-                        
+                        </div>                       
                     </section>
-
                     <section className={styles.section}>
                         <p>Dados da Igreja</p>
                         <div className={styles.data}> 
@@ -99,18 +98,16 @@ export default function RegisterChurch() {
                             <Input label='Nome Fantasia:' type='text' id='inNomeFantasia' placeholder='Nome conforme cartão CNPJ' onChange={(e) => setNomeFantasia(e.target.value)} />
                         </div>
                     </section>
-
                     <section className={styles.section}>
                         <div className={styles.data}>   
                             <p>Dados da Instituição Social apoiada pela igreja</p>
                             <Input label='CNPJ:' type='number' id='inCNPJInst' placeholder='CNPJ' onChange={(e) => setCNPJInst(e.target.value)} />
                             <Input label='Razão Social:' type='text' id='inRazaoSInst' placeholder='Razão conforme cartão CNPJ' onChange={(e) => setRazaoSInst(e.target.value)} />
                             <Input label='Nome Fantasia:' type='text' id='innomeFInst' placeholder='Nome conforme cartão CNPJ' onChange={(e) => setNomeFInst(e.target.value)} />
-                            <Input label='Nome do Responsável:' type='text' id='inNomeRepresentanteInstituicao' placeholder='Nome do Representante da Instituição' onChange={(e) => setNomeRepresentanteInstituicao(e.target.value)} />
+                            <Input label='Nome do Responsável:' type='text' id='inNomeRepresentanteInstituicao' placeholder='Nome do Representante da Instituição' onChange={(e) => setNomeRep(e.target.value)} />
                             <Input label='Telefone do Responsável:' type='number' id='inTelefoneRepresentante'  onChange={(e) => setTelefoneRepresentante(e.target.value)} /> 
                         </div> 
                     </section>
-                    
                     {/* Endereço */}
                     <section className={styles.section}>
                         <div className={styles.data}>
@@ -121,9 +118,8 @@ export default function RegisterChurch() {
                             <Input label='Cidade:' type='text' id='inCidade' placeholder='Cidade' onChange={(e) => setCidade(e.target.value)} />
                             <Input label='UF:' type='text' id='inUF' placeholder='UF' onChange={(e) => setUF(e.target.value)} />
                         </div>
-                       
                     </section>
-                    <Input type='submit' onClick={registerChurch} value='Registrar' />    
+                    <Input type='submit' onClick={cadastrarIgreja} value='Registrar' />    
                 </form>
                 <div>
                 <Button text= "Voltar para página inicial" link="/"/>

@@ -1,6 +1,6 @@
 import styles from './select.module.css'
 
-function Select({text, id, name, options, value, onChange}) {
+export default function Select({text, id, name, options, value, onChange}) {
     return(
         
         <div className={styles.selectComponent}>
@@ -19,4 +19,3 @@ function Select({text, id, name, options, value, onChange}) {
     )
 }
 
-export default Select

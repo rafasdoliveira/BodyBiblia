@@ -1,13 +1,13 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-import Input from '../../components/form/input/input'
-import Select from '../../components/form/select/select'
-import Button from '../../components/button/button'
-import Title from '../../components/title/title'
+import Title from "@/src/app/components/title/title"
+import Input from "@/src/app/components/form/input/input"
+import Select from "@/src/app/components/form/select/select"
+import Button from '@/src/app/components/button/button'
 
 import styles from './page.module.css'
 
@@ -15,6 +15,7 @@ export default function CreateGroup() {
 
     //Constantes para capturar os valores de input
     const router = useRouter()
+    const [livros, setLivros] = useState([]) 
     const [groupname, setGroupname] = useState('') 
     const [description, setDescription] = useState('')
     const [startdate, setStartdate] = useState('') 
@@ -46,6 +47,20 @@ export default function CreateGroup() {
           });
     }
 
+    //Consumo de API RESTFul da Bíblia
+    async function getLivros() {
+        try {
+          const response = await axios.get('https://www.abibliadigital.com.br/api/books');
+          setLivros(response.data);
+          console.log(livros)
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      useEffect(() => {
+        getLivros()
+      })
+
     //Constantes para os selects
     //Atividades
     const listScoreMode = {
@@ -54,10 +69,9 @@ export default function CreateGroup() {
         opcao2: "Maior distância"
       };
     // Buscar os livros da Bíblia a partir da API Bíblia Online
-    const listBible = {
-        opcao: "Selecione uma opção",
-        opcao1: "Gênesis"
-    };
+    const listLivros = livros.map((livro) => (
+        <option key={livro.id}>{livro.name}</option>
+      ));   
     // Buscar as instituições a partir dos cadastros das igrejas        
     const listOsc = {
         opcao: "Selecione uma opção",
@@ -78,7 +92,7 @@ export default function CreateGroup() {
                     <Input label='Data de Início' type='date' name='inStartDate' id='inStartDate' required onChange={(e) => setStartdate(e.target.value)} /> 
                     <Input label='Data Final' type='date' name='inEndDate' id='inEndDate' required onChange={(e) => setEnddate(e.target.value)} />   
                     <Input label='Valor por participante' type='number' min='1' step='0.01' name='inValue' id='inValue' placeholder='Valor por participante' onChange={(e) => setValue(e.target.value)} />
-                    <Select name="inBook" id="inBook" text="Escolha um livro a ser lido" options={listBible} required onChange={(e) => setBook(e.target.value)} />
+                    <Select name="inLivro" id="inLivro" text="Escolha um livro a ser lido" options={listLivros} required onChange={(e) => setBook(e.target.value)} />
                     <Select name="inScoreMode" id="inScoreModes" text="Escolha um modelo de pontuação" options={listScoreMode} required onChange={(e) => setScoremode(e.target.value)} />
                     <Input type='submit' onClick={createChallenge} value='Registrar' link="/" />  
                 </form>
