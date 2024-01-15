@@ -21,7 +21,6 @@ O vencedor será agraciado com 50% do valor total arrecadado durante o desafio. 
 
 ###### O projeto segue em desenvolvimento buscando melhorar a interação com o usuário e agregar conhecimento para o desenvolvedor.
 
-    # BODYBIBLIA | about us
 ##### (en-us)
 
 ## Description
