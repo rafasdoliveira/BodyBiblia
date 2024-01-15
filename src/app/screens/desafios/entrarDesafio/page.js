@@ -11,7 +11,7 @@ import Button from '@/src/app/components/button/button'
 import styles from './page.module.css'
 
 
-export default function entrarDesafio() {
+export default function EntrarDesafio() {
 
     //Constantes para capturar os valores de input
     const router = useRouter()
