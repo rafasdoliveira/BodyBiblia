@@ -15,8 +15,8 @@ export default function Home() {
       </div>
       <div className={styles.botoes}> 
         <Button text= "Cadastre-se" link="/screens/signup" />
-        <Button text= "Cadastro de Igreja" link="/screens/registerchurch" />
-        <Button text= "Criar um desafio" link='/screens/criardesafios' />
+        <Button text= "Cadastro de Igreja" link="/screens/registrarIgreja" />
+        <Button text= "Criar um desafio" link='/screens/criarDesafio' />
         <Button text= "Entrar em um desafio" link="/screens/joinchallenge" />
       </div>
       <Footer/>
