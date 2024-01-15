@@ -20,7 +20,11 @@ export default function Forms() {
     const [username, setUsername] = useState('')
     const [atividade, setAtividade] = useState('')
     const [livro, setLivro] = useState('')
+    const [comentarioLeitura, setComentarioLeitura] = useState('')
     const [treino, setTreino] = useState('')
+    const [recuperarPonto, setRecuperarPonto] = useState('')
+    const [recuperarLeitura, setRecuperarLeitura] = useState('')
+    const [recuperarTreino, setRecuperarTreino] = useState('')
     const [foto, setFoto] = useState('')
 
     function enviarForms() {
@@ -29,7 +33,11 @@ export default function Forms() {
             username: username,
             atividade: atividade,
             livro: livro,
+            comentarioLeitura: comentarioLeitura,
             treino: treino,
+            recuperarPonto: recuperarPonto,
+            recuperarLeitura: recuperarLeitura,
+            recuperarTreino: recuperarTreino,
             foto: foto,
             data: new Date().toLocaleString("pt-BR", {timeZone: "America/Fortaleza"})
     },
@@ -70,7 +78,7 @@ export default function Forms() {
         }
       }
       useEffect(() => {
-        getBooks()
+        getLivros()
       })
 
 
@@ -108,12 +116,25 @@ export default function Forms() {
         option12: 'Vôlei',
     }
 
-    const listRecuperacao = {
+    const listRecuperarPonto = {
         option: 'Selecione uma opção',
-        option1: 'Leitura - Compartilhar Reels no Instagram',
-        option2: 'Treino - Realizar treino com 2 pessoas do grupo'
+        option1: 'Recuperar Leitura',
+        option2: 'Recuperar Treino'
     }    
+
+    const listRecuperarLeitura = {
+        option: 'Selecione uma opção',
+        option1: 'Postagem Reels',
+        option2: 'Outras opções'
+    } 
     
+    const listRecuperarTreino = {
+        option: 'Selecione uma opção',
+        option1: 'Treino em grupo',
+        option2: 'Outras opções'
+    }  
+      
+
     return(
         <div>
             <div>
@@ -125,16 +146,47 @@ export default function Forms() {
                             <Input label='Código do Grupo' type='text' name='inCodigoGrupo' id='inCodigoGrupo' placeholder='Código do Grupo' required onChange={(e) => setGroupname(e.target.value)} />
                             <Select name="inUser" id="inUser" text="Nome de Usuário" options={listUsers} required onChange={(e) => setUsername(e.target.value)} />
                             <Select name="inAtividade" id="inAtividade" text="Atividade" options={listAtividades} required onChange={(e) => setAtividade(e.target.value)} />
+                            {/* Bloco de Leitura */}
                             {atividade == "Leitura" && 
                                 <Select name="inBook" id="inBook" text="Escolha um livro a ser lido" options={listLivros} required onChange={(e) => setLivro(e.target.value)} />
                             }
+                            {atividade == "Leitura" && 
+                                <Input label='Comentário' type='textarea' name='inComentarioLeitura' id='inComentarioLeitura' placeholder='Deixa um comentário sobre sua leitura' onChange={(e) => setComentarioLeitura(e.target.value)} />
+                            }
+                            {atividade == "Leitura" && 
+                                <Input label='Foto da atividade' type='file' name='inFoto' id='inFoto' onChange={(e) => setFoto(e.target.value)} />
+                            }
+
+                            {/* Bloco de Treino */}
                             {atividade == "Treino" && 
-                                <Select name="inTreino" id="inTreino" text="Escolha um livro a ser lido" options={listTreinos} required onChange={(e) => setTreino(e.target.value)} />
+                                <Select name="inTreino" id="inTreino" text="Qual atividade você realizou?" options={listTreinos} required onChange={(e) => setTreino(e.target.value)} />
                             }
-                            {atividade == "Recuperação de Ponto" && 
-                                <Select name="inRecuperacao" id="inRecuperacao" text="Com qual atividade você deseja recuperar ponto?" options={listRecuperacao} required onChange={(e) => setTreino(e.target.value)} />
+                            {/* Criar uma "barra de progressão" para intensidade da atividade */}
+                            {/* {atividade == "Treino" && 
+                                <Select name="inTreino" id="inTreino" text="Quão intenso foi seu treino?" options={listTreinos} required onChange={(e) => setTreino(e.target.value)} />
+                            } */}
+                            {atividade === "Treino" && 
+                                <Input label='Foto da atividade' type='file' name='inFoto' id='inFoto' onChange={(e) => setFoto(e.target.value)} />
                             }
-                            {atividade == "Descanso" && "Leitura" && "Treino" && "Recuperação de Ponto" &&
+                            
+                            {/* Bloco de Recuperação de ponto */}
+                            {
+                            atividade === "Recuperação de Ponto" && 
+                                <Select name="inRecuperarPonto" id="inRecuperarPonto" text="Qual das atividades você deseja recuperar ponto?" options={listRecuperarPonto} required onChange={(e) => setRecuperarPonto(e.target.value)} />
+                            }
+                            {
+                            recuperarPonto === "Recuperar Leitura" && 
+                                <Select name="inRecuperarLeitura" id="inRecuperarLeitura" text="Escolha uma das atividades" options={listRecuperarLeitura} required onChange={(e) => setRecuperarLeitura(e.target.value)} />
+                            }
+                            {
+                            recuperarPonto === "Recuperar Treino" && 
+                                <Select name="inRecuperarTreino" id="inRecuperarTreino" text="Escolha uma das atividades" options={listRecuperarTreino} required onChange={(e) => setRecuperarTreino(e.target.value)} />
+                            }
+                            {atividade === "Recuperação de Ponto" && 
+                                <Input label='Foto da atividade' type='file' name='inFoto' id='inFoto' onChange={(e) => setFoto(e.target.value)} />
+                            }     
+
+                            {atividade === "Descanso" && "Leitura" && "Treino" && "Recuperação de Ponto" &&
                                 <Input label='Foto da atividade' type='file' name='inFoto' id='inFoto' onChange={(e) => setFoto(e.target.value)} />
                             }
                                 <Input type='submit' onClick={enviarForms} value='Enviar Atividade' link="/" />  
