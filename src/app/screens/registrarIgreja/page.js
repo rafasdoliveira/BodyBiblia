@@ -3,6 +3,7 @@
 import Title from "../../components/title/title"
 import Input from "../../components/form/input/input"
 import Select from "../../components/form/select/select"
+import Button from '@/src/app/components/button/button'
 import styles from './page.module.css'
 import axios from 'axios'
 import { useState } from 'react'
