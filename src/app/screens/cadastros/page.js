@@ -12,7 +12,7 @@ export default function Home() {
       </div>
       <div> 
         <Button text= "Cadastro Individual" link="/screens/cadastros/cadastroIndividual" />
-        <Button text= "Cadastro Igreja" link="/screens/caIgreja" />
+        <Button text= "Cadastro Igreja" link="/screens/cadastros/cadastroIgreja" />
       </div>
       <div>
         <Button text= "Voltar para página inicial" link="/"/>

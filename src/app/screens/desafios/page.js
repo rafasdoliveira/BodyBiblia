@@ -11,9 +11,9 @@ export default function Home() {
         <Title title='BodyBiblia - 1ª Versão!' />     
       </div>
       <div className={styles.botoes}> 
-        <Button text= "Criar um desafio" link='/screens/criarDesafio' />
+        <Button text= "Criar um desafio" link='/screens/desafios/criarDesafio' />
         <Button text= "Entrar em um desafio" link="/screens/desafios/entrarDesafio" />
-        <Button text= "Meus desafios" link="/screens/joinchallenge" />
+        {/* <Button text= "Meus desafios" link="/screens/joinchallenge" /> */}
       </div>
       <div>
         <Button text= "Voltar para página inicial" link="/"/>
