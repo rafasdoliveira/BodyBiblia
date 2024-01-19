@@ -14,6 +14,7 @@ export default function Home() {
         </p>
       </div>
       <div className={styles.botoes}> 
+        <Button text= "Atividades" link="/screens/atividades" />
         <Button text= "Cadastros" link="/screens/cadastros" />
         <Button text= "Desafios" link="/screens/desafios" />
       </div>

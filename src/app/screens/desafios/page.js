@@ -13,7 +13,7 @@ export default function Home() {
       <div className={styles.botoes}> 
         <Button text= "Criar um desafio" link='/screens/desafios/criarDesafio' />
         <Button text= "Entrar em um desafio" link="/screens/desafios/entrarDesafio" />
-        {/* <Button text= "Meus desafios" link="/screens/joinchallenge" /> */}
+        <Button text= "Listar meus desafios" link="/screens/desafios/listarGruposDesafios" />
       </div>
       <div>
         <Button text= "Voltar para página inicial" link="/"/>
